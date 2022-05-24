@@ -4,80 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/main.css">
-    <title>Evento</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/style.min.css">
+    <script defer src="/js/login.js"></script>
 </head>
-<body>
-    <body>
-        <header id="home">
-          <nav class="navbar">
-            <h1>Eventic</h1>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#events">Events</a></li>
-                <li><a href="#add-event">New Event</a></li>
-            </ul>
-          </nav>
-          <div class="welcome-event"></div>
-        </header>
-        <main>
-            <section id="events">
-                <h1 class="section-title">Events</h1>
-                <div class="events-container"></div>
-            </section>
-            <section id="add-event">
-                <h1 class="section-title">New Event</h1>
-                <form class="form">
-                    <input type="text" id="name" placeholder="Name">
-                    <input type="number" id="attendee" placeholder="Attendees">
-                    <textarea id="description" cols="30" rows="10" placeholder="Description..."></textarea>
-                    <select id="status">
-                        <option value="0">Free</option>
-                        <option value="1">Paid</option>
-                    </select>
-                    <button class="btn btn-primary">Save</button>
-                </form>
-            </section>
-        </main>
-        <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-firestore.js"></script>
-
-        <script>
-        // // Your web app's Firebase configuration
-        var firebaseConfig = {
-            // Import the functions you need from the SDKs you need
-            // import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
-            // TODO: Add SDKs for Firebase products that you want to use
-            // https://firebase.google.com/docs/web/setup#available-libraries
-
-            // Your web app's Firebase configuration
-            // const firebaseConfig = {
-            apiKey: "AIzaSyAA6HOGZN0j7mUlDKFHinbQLCzzQyxIYR4",
-            authDomain: "appevent-b1495.firebaseapp.com",
-            databaseURL: "ahBzfmFwcGV2ZW50LWIxNDk1chULEghhcHBFdmVudBiAgIDo14eBCgw",
-            projectId: "appevent-b1495",
-            storageBucket: "appevent-b1495.appspot.com",
-            messagingSenderId: "513396142943",
-            appId: "1:513396142943:web:c15884d1b7c898ddff7cea"
-            // apiKey: "xxxxxxxxxxxxxxxxxxxxxxxxx",
-            // authDomain: "xxxxxxxxxxxxxxxxxxxxxxxx",
-            // databaseURL: "xxxxxxxxxxxxxxxxxxxxxxxxx",
-            // projectId: "xxxxxxxxxxxxxxxxxxxxxxxxx",
-            // storageBucket: "xxxxxxxxxxxxxxxxxxxxxxxxx",
-            // messagingSenderId: "xxxxxxxxxxxxxxxxxxxxxxxxx",
-            // appId: "xxxxxxxxxxxxxxxxxxxxxxxxx"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        const db = firebase.firestore()
-        
-        // Initialize Firebase
-        // const app = initializeApp(firebaseConfig);
-
-        </script>
-
-        <script src="scripts/db.js"></script>
-        <script src="scripts/app.js"></script>
-
+<body class="login">
+    <div class="container">
+        <h2 class="text-center">Login</h2>
+        <br>
+        <form action="/dashboard.html" class="loginForm">
+            <div class="input-group">
+                <label for="username" class="label">Username</label>
+                <input type="text" id="username" class="input">
+                <span class="error-message"></span>
+            </div>
+            <br>
+            <div class="input-group">
+                <label for="password" class="label">Password</label>
+                <input type="password" id="password" class="input">
+                <span class="error-message"></span>
+            </div>
+            <br>
+            <button class="button" type="submit">Login</button>
+        </form>
+    </div>
 </body>
 </html>
