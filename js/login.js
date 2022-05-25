@@ -1,3 +1,27 @@
+const authStructure = [
+    {
+        user: 'admin',
+        pass: '12345678',
+        logged: false,
+        role: true,
+    },
+    {
+        user: 'alejandro',
+        pass: '12345678',
+        logged: false,
+        role: false,
+    },
+    {
+        user: 'isaac',
+        pass: '12345678',
+        logged: false,
+        role: false,
+    }
+]
+
+
+const auth = new Auth();
+
 class Login {
 	constructor(form, fields) {
 		this.form = form;
@@ -19,8 +43,15 @@ class Login {
 			});
 			if (error == 0) {
 				//do login api here
-				localStorage.setItem("auth", 1);
-				this.form.submit();
+				if(auth.validateAuth())
+				{
+					this.form.submit();
+				}
+				else 
+				{
+					alert("Nombre o Contraseña son erroneos");
+					return false;
+				}
 			}
 		});
 	}

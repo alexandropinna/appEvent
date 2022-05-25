@@ -1,7 +1,7 @@
 class Auth {
 	constructor() {
         document.querySelector("body").style.display = "none";
-		const auth = localStorage.getItem("auth");
+		const auth = sessionStorage.getItem("auth");
 		this.validateAuth(auth);
 	}
 
@@ -14,7 +14,7 @@ class Auth {
 	}
 
 	logOut() {
-		localStorage.removeItem("auth");
+		sessionStorage.removeItem("auth");
 		window.location.replace("./");
 	}
 }
